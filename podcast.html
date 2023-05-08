@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>PODCAST23</title>
+</head>
+<body>
+<div id="divvideo" style="visibility: hidden">
+<video id="newvideo" autoplay style="position: absolute; width: 300px; height: 500px; z-index: 2; cursor: pointer;">
+</video>
+</div>
+</body>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+	var urlTempo = urlParams.get("tempo") // livros
+
+	var intervalo = 60000; // Depois de 60000 = 1 minuto
+
+	if (intervalo > 0) {
+	   intervalo = urlTempo * 60000;
+	} else {
+	   intervalo = 20 * 60000;
+	}
+
+    function mostrar() {
+
+	  		document.getElementById("divvideo").style.visibility = "visible";
+
+	  		var video = document.getElementById("newvideo");
+
+	  		video.src="proximo-podcast.mp4";
+			setTimeout("esconde()", 20000); // Depois de 5 segundos
+			setTimeout("mostrar2()", intervalo); // Depois de 5 segundos
+
+	};
+
+	function mostrar2() {
+
+	  		document.getElementById("divvideo").style.visibility = "visible";
+
+	  		var video = document.getElementById("newvideo");
+
+	  		video.src="proximo-podcast.mp4";
+			setTimeout("esconde()", 20000); // Depois de 5 segundos
+			setTimeout("mostrar()", intervalo); // Depois de 5 segundos
+
+	};
+
+	function esconde() {
+
+		  		document.getElementById("divvideo").style.visibility = "hidden";
+	};
+
+	setTimeout("mostrar()", intervalo); // Depois de 5 segundos
+	setTimeout("esconde()", 20000); // Depois de 5 segundos
+</script>
+</html>
