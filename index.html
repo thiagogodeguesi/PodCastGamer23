@@ -9,16 +9,7 @@
 </div>
 </body>
 <script>
-    var urlParams = new URLSearchParams(window.location.search);
-	var urlTempo = urlParams.get("tempo") // livros
-
-	var intervalo = 60000; // Depois de 60000 = 1 minuto
-
-	if (intervalo > 0) {
-	   intervalo = urlTempo * 60000;
-	} else {
-	   intervalo = 20 * 60000;
-	}
+    var intervalo = 120000; // Depois de 60000 = 1 minuto
 
     function mostrar() {
 
@@ -46,10 +37,10 @@
 
 	function esconde() {
 
-		  		document.getElementById("divvideo").style.visibility = "hidden";
+		document.getElementById("divvideo").style.visibility = "hidden";
 	};
 
 	setTimeout("mostrar()", intervalo); // Depois de 5 segundos
-	setTimeout("esconde()", 20000); // Depois de 5 segundos
+	setTimeout("esconde()", 0); // Depois de 5 segundos
 </script>
 </html>
