@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>PODCAST23</title>
+</head>
+<body>
+<div id="divvideo" style="visibility: hidden">
+  <img id="newimg" alt="PodCast" width="300" height="500">
+  </img>
+</div>
+</body>
+<script>
+  var urlParams = new URLSearchParams(window.location.search);
+	var urlTempo = urlParams.get("tempo") // livros
+
+	var intervalo = urlTempo * 60000; // Depois de 60000 = 1 minuto
+
+   function mostrar() {
+	  document.getElementById("divvideo").style.visibility = "visible";
+       
+	var img = document.getElementById("newimg");
+        img.src = "card.jpeg";
+        document.getElementById('imagens').appendChild(img);
+        
+        setTimeout("esconde()", 20000); // 
+	setTimeout("mostrar2()", intervalo); // 
+	};
+
+	
+    function mostrar2() {
+	document.getElementById("divvideo").style.visibility = "visible";
+	var img = document.getElementById("newimg");
+        img.src = "card.jpeg";
+        document.getElementById('imagens').appendChild(img);
+        
+	setTimeout("esconde()", 20000); // Depois de 5 segundos
+	setTimeout("mostrar()", intervalo); // Depois de 5 segundos
+	};
+
+    function esconde() {
+	document.getElementById("divvideo").style.visibility = "hidden";
+	};
+
+	setTimeout("mostrar()", 0); // Depois de 5 segundos
+	setTimeout("esconde()", 20000); // Depois de 5 segundos
+</script>
+</html>
