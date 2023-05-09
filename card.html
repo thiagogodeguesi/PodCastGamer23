@@ -12,32 +12,29 @@
     var intervalo = 60000; //120000; // Depois de 60000 = 1 minuto
 
     function mostrar() {
-
-	  		document.getElementById("divvideo").style.visibility = "visible";
+	document.getElementById("divvideo").style.visibility = "visible";
         
-	  		var img = document.getElementById("newimg");
+	var img = document.getElementById("newimg");
         img.src = "card.jpeg";
         document.getElementById('imagens').appendChild(img);
         
         setTimeout("esconde()", 20000); // 
-			  setTimeout("mostrar2()", intervalo); // 
+	setTimeout("mostrar2()", intervalo); // 
 	};
 
-	function mostrar2() {
-
-	  		document.getElementById("divvideo").style.visibility = "visible";
-
-	  		var video = document.getElementById("newvideo");
-
-	  		video.src="proximo-podcast.mp4";
-			setTimeout("esconde()", 20000); // Depois de 5 segundos
-			setTimeout("mostrar()", intervalo); // Depois de 5 segundos
-
+	
+    function mostrar2() {
+	document.getElementById("divvideo").style.visibility = "visible";
+	var img = document.getElementById("newimg");
+        img.src = "card.jpeg";
+        document.getElementById('imagens').appendChild(img);
+        
+	setTimeout("esconde()", 20000); // Depois de 5 segundos
+	setTimeout("mostrar()", intervalo); // Depois de 5 segundos
 	};
 
-	function esconde() {
-
-		document.getElementById("divvideo").style.visibility = "hidden";
+    function esconde() {
+	document.getElementById("divvideo").style.visibility = "hidden";
 	};
 
 	setTimeout("mostrar()", 0); // Depois de 5 segundos
